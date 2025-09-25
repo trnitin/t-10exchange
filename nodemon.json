@@ -1,0 +1,3 @@
+{
+  "ignore": [ "betlist.json","auth.json","BetfairAuth.json"]
+}
