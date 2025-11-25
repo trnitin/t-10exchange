@@ -197,6 +197,20 @@ export const T10Betlist = async (req, res) => {
     //   }
     // }
 
+
+
+//     const betsToInsert = filtered.map(bet => ({ ...bet, betId: generateBetId(bet) }));
+
+// const bulkOps = betsToInsert.map(bet => ({
+//   updateOne: {
+//     filter: { betId: bet.betId },
+//     update: { $setOnInsert: bet },
+//     upsert: true,
+//   },
+// }));
+
+// const result = await collection.bulkWrite(bulkOps);
+    
      const betsToInsert = filtered.map((b) => ({ ...b, betId: generateBetId(b) }));
 
     // ✅ Bulk insert, ignore duplicates
@@ -222,5 +236,6 @@ export const T10Betlist = async (req, res) => {
     res.status(500).send({ error: "Failed to fetch or update bets." });
   }
 };
+
 
 
